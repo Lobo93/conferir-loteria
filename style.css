@@ -1,0 +1,213 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+/* Área de sorteio */
+.area-sorteio {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+
+.numero-sorteio {
+  font-family: sans-serif;
+  width: 20px;
+  text-align: center;
+  margin: 5px;
+  padding: 8px 16px;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 2px 24px #0001;
+  transition: color .1s, background-color .1s, transform .3s, box-shadow .3s;
+}
+
+.numero-sorteio.sorteado {
+  color: #fff;
+  background-color: #494;
+}
+
+.numero-sorteio:hover,
+.numero-sorteio:focus {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0px 4px 32px #0003;
+}
+
+/* Modal de novos bilhetes */
+.area-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000b;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .1s;
+}
+
+.area-modal.mostrar {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.modal {
+  padding: 20px;
+  background-color: #fff;
+  width: 80%;
+  max-width: 520px;
+  text-align: center;
+  transition: margin .3s;
+}
+
+.area-numeros-modal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.area-modal.mostrar .modal {
+  margin-bottom: 40px;
+}
+
+.numero-modal {
+  font-family: sans-serif;
+  width: 16px;
+  line-height: 16px;
+  text-align: center;
+  margin: 2px 5px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: solid 2px transparent;
+  transition: border-color .1s;
+}
+
+.numero-modal.escolhido {
+  border-color: #333;
+}
+
+.botao-modal {
+  margin: 20px 20px 0;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 24px #0002;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.botao-modal:hover,
+.botao-modal:focus {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0px 4px 32px #0004;
+}
+
+/* Área de bilhetes */
+.area-bilhetes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bilhete {
+  margin: 10px;
+  padding: 16px;
+  box-shadow: 0px 4px 24px #0002;
+  width: 300px;
+  min-height: 100px;
+  text-align: center;
+}
+
+.area-numeros-bilhete {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #eee;
+  margin-bottom: 15px;
+  height: calc(100% - 50px);
+}
+
+.numero-bilhete {
+  font-family: sans-serif;
+  width: 16px;
+  line-height: 16px;
+  text-align: center;
+  margin: 2px 5px;
+  padding: 10px;
+  border-radius: 50%;
+  border: solid 2px transparent;
+  transition: border-color .1s;
+}
+
+.numero-bilhete.sorteado {
+  border-color: #333;
+}
+
+.contador-acertos {
+  display: inline-block;
+  font-family: sans-serif;
+  text-align: left;
+  width: calc(100% - 20px);
+}
+
+.botao-remover-bilhete {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 600;
+  color: #aaa;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform .3s, color .3s;
+}
+
+.botao-remover-bilhete:hover,
+.botao-remover-bilhete:focus {
+  transform: scale(1.5);
+  color: #e22;
+}
+
+.botao-adicionar-bilhete {
+  width: 120px;
+  min-height: 120px;
+  margin: 10px 20px;
+  font-size: 80px;
+  line-height: 1;
+  font-weight: 600;
+  color: #aaa;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform .3s, color .3s;
+}
+
+.botao-adicionar-bilhete:hover,
+.botao-adicionar-bilhete:focus {
+  transform: scale(1.2);
+  color: #444;
+}
